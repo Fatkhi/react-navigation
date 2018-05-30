@@ -215,10 +215,10 @@ class TabBarBottom extends React.PureComponent<Props> {
                 key={route.key}
                 testID={testID}
                 accessibilityLabel={accessibilityLabel}
-                onPress={() =>
-                  onPress
-                    ? onPress({ previousScene, scene, jumpToIndex })
-                    : jumpToIndex(index)}
+                onPress={() =>{ 
+                  onPress ? onPress({ previousScene, scene, jumpToIndex }) : null;
+                  jumpToIndex(index) 
+                }}
               >
                 <Animated.View
                   style={[
